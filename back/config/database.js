@@ -5,8 +5,8 @@ const connectDatabase = () => {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }).then(con=>{
-        console.log(`Base de datos mongo conectada con ekl servidor: ${con.Connection.host}`)
-    }).catch(con =>{
+        console.log(`Base de datos mongo conectada con el servidor: ${con.Connection.host}`)
+    }).catch(con => {
         console.log(`No se logro la conexion con la base de datos`)
     })
 }

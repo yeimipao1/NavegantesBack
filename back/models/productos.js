@@ -1,4 +1,4 @@
-const mongoose=require("mongoose")
+const mongoose=require("mongoose");
 
 const productosSchema=mongoose.Schema({
     nombre:{
@@ -10,16 +10,16 @@ const productosSchema=mongoose.Schema({
     precio:{
         type: Number,
         required:[true,"Por favor registre el precio del producto."],
-        maxLength:[8,"El precio del producto no puede estar por encima de 99.999.99"],
-        default:0.0
+        maxLength:[8, "El precio del producto no puede estar por encima de 99'999.999"],
+        default: 0.0
     },
     descripcion:{
-        type: String,
+        type:String,
         required:[true,"Por favor registre una descripcion para el producto."]
     },
     calificacion:{
         type: Number,
-        default:0
+        default: 0
     },
     imagen:[
         {
@@ -54,12 +54,12 @@ const productosSchema=mongoose.Schema({
     },
     inventario:{
         type: Number,
-        required:[true,"Por favor registre el stock del producto"],
+        required:[true, "Por favor registre el stock del producto"],
         maxLength:[5,"Cantidad maxima del producto no puede sobrepasar 99999"],
         default:0
     },
     numCalificaciones:{
-        type: Number,
+        type:Number,
         default:0
     },
     opiniones:[
@@ -69,12 +69,12 @@ const productosSchema=mongoose.Schema({
                 required:true
             },
             rating:{
-                type: Number,
+                type:Number,
                 required:true
             },
             comentario:{
-                type: String,
-                required: true
+                type:String,
+                required:true
             }
         }
     ],

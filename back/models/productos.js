@@ -11,7 +11,7 @@ const productosSchema=mongoose.Schema({
         type: Number,
         required:[true,"Por favor registre el precio del producto."],
         maxLength:[8, "El precio del producto no puede estar por encima de 99'999.999"],
-        default: 0.0
+        required: [true, "Por favor poner el precio."]
     },
     descripcion:{
         type:String,

@@ -1,16 +1,27 @@
 const express=require("express");
 const app = express();
+const errorMiddleware= require("./middleware/errors")
 
 app.use(express.json());
 
 //importar rutas
 const productos=require("./routes/products")
+const usuarios=require("./routes/users")
+const ventas = require("./routes/ventas")
 
 app.use('/api',productos) // sujeto cambios
 
+app.use('/api',usuarios)
+
+app.use('/api', ventas)
+
+//Middlewares para manejar errores
+app.use(errorMiddleware)
+
+
 module.exports=app
 /**aqui se registra lo que ya esta listo*/
-const ventas = require('./routes/ventas')
-app.use('/api', ventas)
+
+
 //modelo-controlador-apps 
 /**ruta de navegador app.use('/api',index) home */
